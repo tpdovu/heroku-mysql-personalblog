@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,7 +17,8 @@
     "lodash": "^4.17.21",
     "lodash.lowercase": "^4.3.0",
     "mysql": "^2.18.1",
-    "php": "^1.0.1"
+    "php": "^1.0.1",
+    "prohairesis": "^1.2.4"
   },
   "engines": {
     "node": "14.17.0"
