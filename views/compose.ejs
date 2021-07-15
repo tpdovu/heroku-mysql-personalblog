@@ -4,12 +4,12 @@
 
 <form action="/compose" method="POST">
     <label for="post-title">Title</label>
-    <input type="text" class="form-control" id="post-title" autocomplete="off" name="postTitle">
+    <input type="text" class="form-control" id="post-title" autocomplete="off" name="postTitle" required="required">
 
 
     <div class="form-group">
         <label for="post-text">Post</label>
-        <textarea class="form-control" id="post-text" rows="5" autocomplete="off" name="postBody"></textarea>
+        <textarea class="form-control" id="post-text" rows="5" autocomplete="off" name="postBody" required="required"></textarea>
     </div>
 
     <button class="btn btn-primary" type="submit" name="button">Publish</button>    
