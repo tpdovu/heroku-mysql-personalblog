@@ -16,21 +16,21 @@ const app = express();
 
 
 
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "mydb"
-// });
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "mydb"
+});
 
-// db.connect((err) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log("MySQL connected.")
-//   }
-// })
-// app.set('view engine', 'ejs');
+db.connect((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("MySQL connected.")
+  }
+})
+app.set('view engine', 'ejs');
 
 //create DB
 // app.get("/createdb", (req, res) => {
