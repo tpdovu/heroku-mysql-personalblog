@@ -122,7 +122,6 @@ app.get("/posts/:postTitle", function (req, res) {
 
 app.post("/compose", function (req, res) {
   const timeCreated = new Date();
-  console.log(timeCreated);
   const post = {
     title: req.body.postTitle,
     body: req.body.postBody,
