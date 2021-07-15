@@ -1,0 +1,14 @@
+<%- include partials/header.ejs %>
+
+<h1>Home</h1>
+<p> <%- homeStartingContent %> </p>
+
+
+<% posts.forEach(post => { %>
+<h1><%= post.title %> </h1>
+<h6><%= post.date_created.toDateString(); %> </h6>
+<p class="truncate"> <%= post.body %> </p>
+<a href="/posts/<%=post.title%>">Read More</a>
+<% }) %>
+
+<%- include partials/footer.ejs %>
