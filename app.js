@@ -16,13 +16,21 @@ const app = express();
 
 
 
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "mydb"
+// });
+
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "mydb"
+  host: "us-cdbr-east-04.cleardb.com",
+  user: "b5d10ea4b7c234",
+  password: "d56d690a",
+  database: "heroku_e0af44fdfb12f8a"
 });
 
+//mysql://b5d10ea4b7c234:d56d690a@us-cdbr-east-04.cleardb.com/heroku_e0af44fdfb12f8a?reconnect=true
 db.connect((err) => {
   if (err) {
     console.log(err);
