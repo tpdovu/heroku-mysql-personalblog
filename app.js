@@ -15,14 +15,6 @@ const contactContent = "contact Scelerisque eleifend donec pretium vulputate sap
 const app = express();
 
 
-
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "mydb"
-// });
-
 const db = mysql.createConnection({
   host: "us-cdbr-east-04.cleardb.com",
   user: "b5d10ea4b7c234",
@@ -40,32 +32,6 @@ db.connect((err) => {
 })
 app.set('view engine', 'ejs');
 
-//create DB
-// app.get("/createdb", (req, res) => {
-//   let sql = "CREATE DATABASE blahblah";
-//   db.query(sql, (err, result) => {
-//     if(err){
-//       console.log(err);
-//     } else {
-//       console.log(result);
-//       res.send("Database created...");
-//     }
-//   });
-// });
-
-//create table
-// app.get('/createpoststable', (res, req) => {
-//   let sql = 'CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))';
-//   db.query(sql, (err, result)=> {
-//     if(err){
-//       console.log(err);
-//     } else {
-//       console.log(result);
-//       res.send('Posts table created....');
-
-//     }
-//   });
-// });
 
 app.use(bodyParser.urlencoded({
   extended: true
