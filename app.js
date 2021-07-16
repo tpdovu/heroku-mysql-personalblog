@@ -122,10 +122,11 @@ app.get("/posts/:postTitle", function (req, res) {
 
 app.post("/compose", function (req, res) {
   const timeCreated = new Date();
+  const dateString = date.format(timeCreated, 'MMM DD YYYY HH:mm:ss');
   const post = {
     title: req.body.postTitle,
     body: req.body.postBody,
-    date_created: timeCreated
+    date_created: dateString
   };
   const sql = 'INSERT INTO posts SET ?'
   db.query(sql, post, (err, result) => {
