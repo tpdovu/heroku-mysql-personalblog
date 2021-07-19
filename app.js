@@ -75,8 +75,8 @@ app.get("/compose", function (req, res) {
 
 app.get("/posts/:postTitle", function (req, res) {
   const sql = `SELECT * FROM posts WHERE title = '${req.params.postTitle}'`;
-  let query = db.query(sql, (err, result) => {
-    if (err) {
+  let query = db.query(sql, (err,result)=>{
+    if(err){
       console.log(err);
     } else {
       res.render("post", {
@@ -110,7 +110,6 @@ app.post("/compose", function (req, res) {
 });
 
 
-const server = app.listen(process.env.PORT || 3000, () => {
-  const port = server.address().port;
-  console.log(`Server started on port ${port}`);
+app.listen(process.env.PORT || 3000, ()=> {
+  console.log("Server started.");
 });
