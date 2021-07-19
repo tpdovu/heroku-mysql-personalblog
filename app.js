@@ -7,7 +7,13 @@ const ejs = require("ejs");
 const mysql = require("mysql");
 const date = require('date-and-time');
 
-
+var pool = mysql.createPool({
+  connectionLimit: 10,
+  host: "us-cdbr-east-04.cleardb.com",
+  user: "b5d10ea4b7c234",
+  password: "d56d690a",
+  database: "heroku_e0af44fdfb12f8a"
+});
 
 
 const homeStartingContent = "This is a page for posting personal blog posts. Go to /compose path to write a poast.";
@@ -17,20 +23,7 @@ const contactContent = "Phone number, email.";
 const app = express();
 
 
-const db = mysql.createConnection({
-  host: "us-cdbr-east-04.cleardb.com",
-  user: "b5d10ea4b7c234",
-  password: "d56d690a",
-  database: "heroku_e0af44fdfb12f8a"
-});
 
-db.connect((err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("MySQL connected.")
-  }
-})
 app.set('view engine', 'ejs');
 
 
@@ -43,18 +36,21 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
   const sql = 'SELECT * FROM posts';
-  db.query(sql, (err, retrievedPosts) => {
+  pool.getConnection(function (err, connection) {
     if (err) {
-      console.log(err);
-    } else {
+      throw err;
+    }
+    connection.query(sql, (err, retrievedPosts) => {
+      if (err) {
+        throw err;
+      }
       res.render("home", {
         homeStartingContent: homeStartingContent,
         posts: retrievedPosts
       });
-    }
+      connection.release();
+    });
   });
-
-
 });
 
 app.get("/about", function (req, res) {
@@ -75,16 +71,22 @@ app.get("/compose", function (req, res) {
 
 app.get("/posts/:postTitle", function (req, res) {
   const sql = `SELECT * FROM posts WHERE title = '${req.params.postTitle}'`;
-  let query = db.query(sql, (err,result)=>{
-    if(err){
-      console.log(err);
-    } else {
+  pool.getConnection(function (err, connection) {
+    if (err) {
+      throw err;
+    }
+    connection.query(sql, (err, result) => {
+      if (err) {
+        throw err;
+      }
       res.render("post", {
         postTitle: result[0].title,
         postBody: result[0].body
       });
-    }
-  })
+
+      connection.release();
+    });
+  });
 });
 
 app.post("/compose", function (req, res) {
@@ -96,20 +98,21 @@ app.post("/compose", function (req, res) {
     date_created: dateString
   };
   const sql = 'INSERT INTO posts SET ?'
-  db.query(sql, post, (err, result) => {
+  pool.getConnection(function (err, connection) {
     if (err) {
-      console.log(err);
-    } else {
-      console.log("post has been added to mysql");
-
-      res.redirect("/");
+      throw err;
     }
-  });
-
-
+    connection.query(sql, post, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      connection.release();
+      res.redirect("/");
+    })
+  })
 });
 
 
-const server = app.listen(process.env.PORT || 3000, ()=> {
+const server = app.listen(process.env.PORT || 3000, () => {
   console.log("Server started.");
 });
