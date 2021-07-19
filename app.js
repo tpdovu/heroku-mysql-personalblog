@@ -16,7 +16,7 @@ var pool = mysql.createPool({
 });
 
 
-const homeStartingContent = "This is a page for posting personal blog posts. Go to /compose path to write a poast.";
+const homeStartingContent = "This is a page for posting personal blog posts. Go to /compose path to write a post. Most recent posts are listed at the top. Still need to figure out a way to display time in viewer's time zone.";
 const aboutContent = "My name is Tony. I created this page with a html/css front end and mysql back end. It is hosted on heroku and uses heroku's cloud based sql, clearDB.";
 const contactContent = "Phone number, email.";
 
