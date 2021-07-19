@@ -15,8 +15,8 @@ var pool = mysql.createPool({
   database: "heroku_e0af44fdfb12f8a"
 });
 
-//setup content
-//#region 
+
+//#region setup content 
 const homeStartingContent = "This is a page for posting personal blog posts. Go to /compose path to write a post. Most recent posts are listed at the top. Still need to figure out a way to display time in viewer's time zone.";
 const aboutContent = "My name is Tony. I created this page with a html/css front end and mysql back end. It is hosted on heroku and uses heroku's cloud based sql, clearDB.";
 const contactContent = "Phone number, email.";
@@ -52,22 +52,6 @@ app.get("/", function (req, res) {
       connection.release();
     });
   });
-});
-
-app.get("/about", function (req, res) {
-  res.render("about", {
-    aboutContent: aboutContent
-  });
-});
-
-app.get("/contact", function (req, res) {
-  res.render("contact", {
-    contactContent: contactContent
-  });
-});
-
-app.get("/compose", function (req, res) {
-  res.render("compose");
 });
 
 app.get("/posts/:postTitle/id/:postID", function (req, res) {
@@ -113,6 +97,21 @@ app.post("/compose", function (req, res) {
   })
 });
 
+app.get("/about", function (req, res) {
+  res.render("about", {
+    aboutContent: aboutContent
+  });
+});
+
+app.get("/contact", function (req, res) {
+  res.render("contact", {
+    contactContent: contactContent
+  });
+});
+
+app.get("/compose", function (req, res) {
+  res.render("compose");
+});
 
 const server = app.listen(process.env.PORT || 3000, () => {
   console.log("Server started.");
