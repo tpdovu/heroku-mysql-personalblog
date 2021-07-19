@@ -69,8 +69,8 @@ app.get("/compose", function (req, res) {
   res.render("compose");
 });
 
-app.get("/posts/:postTitle", function (req, res) {
-  const sql = `SELECT * FROM posts WHERE title = '${req.params.postTitle}'`;
+app.get("/posts/:postTitle/id/:postID", function (req, res) {
+  const sql = `SELECT * FROM posts WHERE id = '${req.params.postID}'`;
   pool.getConnection(function (err, connection) {
     if (err) {
       throw err;
