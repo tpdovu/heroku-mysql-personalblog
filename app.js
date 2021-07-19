@@ -15,7 +15,8 @@ var pool = mysql.createPool({
   database: "heroku_e0af44fdfb12f8a"
 });
 
-
+//setup content
+//#region 
 const homeStartingContent = "This is a page for posting personal blog posts. Go to /compose path to write a post. Most recent posts are listed at the top. Still need to figure out a way to display time in viewer's time zone.";
 const aboutContent = "My name is Tony. I created this page with a html/css front end and mysql back end. It is hosted on heroku and uses heroku's cloud based sql, clearDB.";
 const contactContent = "Phone number, email.";
@@ -33,7 +34,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-
+//#endregion
 app.get("/", function (req, res) {
   const sql = 'SELECT * FROM posts';
   pool.getConnection(function (err, connection) {
