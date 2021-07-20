@@ -11,22 +11,37 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-    color: #0096c7;
+    background-color: #023e8a;
+
 }
 
-.navbar-brand {
-    color: #023e8a;
+.navbar-default .navbar-brand {
+    color:white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
 }
 
 .navbar-nav li a:hover {
-    color: #023e8a !important;
+    color: #90e0ef !important;
 }
+
 
 .footer-padding {
     padding-bottom: 60px;
 }
 
 
+/* body */
+body{
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+
+
+/* footer */
 .footer {
     position: fixed;
     text-align: center;
