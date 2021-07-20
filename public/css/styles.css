@@ -39,7 +39,21 @@ body{
     color: #212529;
 }
 
+.post-preview {
+    line-height: 1rem;
+    padding-top: 2.5%;
+}
 
+.title-time {
+    line-height: 1rem;
+    text-align: center;
+}
+
+.post-body-preview{
+    line-height: 1.25rem;
+    text-align: center;
+
+}
 
 /* footer */
 .footer {
