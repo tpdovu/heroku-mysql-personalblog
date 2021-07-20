@@ -11,6 +11,11 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+    color: #0096c7;
+}
+
+.navbar-brand {
+    color: #023e8a;
 }
 
 .navbar-nav li a:hover {
