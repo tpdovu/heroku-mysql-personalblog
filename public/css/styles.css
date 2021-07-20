@@ -14,7 +14,7 @@
 }
 
 .navbar-nav li a:hover {
-    color:navy !important;
+    color: #023e8a !important;
 }
 
 .footer-padding {
@@ -28,7 +28,8 @@
     bottom: 0;
     width: 100%;
     height: 60px;
-    background-color: navy;
+    background-color:#023e8a
+    ;
 }
 
 .footer p {
