@@ -76,7 +76,7 @@ app.get("/posts/:postTitle/id/:postID", function (req, res) {
 
 app.post("/compose", function (req, res) {
   const timeCreated = new Date();
-  const dateString = date.format(timeCreated, 'ddd MMM DD YYYY');
+  const dateString = date.format(timeCreated, 'MMM DD YYYY');
   const post = {
     title: req.body.postTitle,
     body: req.body.postBody,
