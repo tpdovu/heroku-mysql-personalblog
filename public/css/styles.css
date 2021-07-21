@@ -76,7 +76,7 @@ h6 {
 }
 
 .truncate {
-    width: 100%;
+    width: 85%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
