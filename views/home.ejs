@@ -11,8 +11,10 @@
         <h6><%= post.date_created %></h6>
     </div>
     <div class="post-body-preview">
-        <p> <%= post.body.substring(0, 150) + "..." %> </p>
-        <a href="/posts/<%=post.title%>/id/<%=post.id%>">Read More</a>
+        <p> <%= post.body.substring(0, 100) + "..." %>
+            <a href="/posts/<%=post.title%>/id/<%=post.id%>">Read More</a>
+        </p>
+
     </div>
 </div>
 
