@@ -15,10 +15,10 @@
 
 }
 
-.navbar-default .navbar-brand{
+.navbar-header .navbar-brand{
     color: white;
 }
-.navbar-default .navbar-brand:hover {
+.navbar-header .navbar-brand:hover {
     color: #90e0ef !important;
 }
 
