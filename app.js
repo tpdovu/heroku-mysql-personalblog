@@ -3,7 +3,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-// var lowerCase = require('lodash.lowercase');
 const mysql = require("mysql");
 const date = require('date-and-time');
 
@@ -17,7 +16,7 @@ var pool = mysql.createPool({
 
 
 //#region setup content 
-const homeStartingContent = "This is a page for posting personal blog posts. Go to /compose path to write a post. Most recent posts are listed at the top. Still need to figure out a way to display time in viewer's time zone.";
+const homeStartingContent = "This is a page for posting personal blog posts. Click on 'personal blog' to go to /compose and write post. Most recent posts are listed at the top.";
 const aboutContent = "My name is Tony. I created this page with a html/css front end and mysql back end. It is hosted on heroku and uses heroku's cloud based sql, clearDB.";
 const contactContent = "Phone number, email.";
 
