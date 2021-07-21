@@ -6,8 +6,8 @@
 
 <% posts.slice().reverse().forEach(post => { %>
 <div class="post-preview">
-    <div class="title-time">
-        <h3><%= post.title %> </h3>
+    <div>
+        <h3 class="post-title"><%= post.title %> </h3>
         <h6><%= post.date_created %></h6>
     </div>
     <div class="post-body-preview">
