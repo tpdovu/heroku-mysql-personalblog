@@ -15,8 +15,11 @@
 
 }
 
-.navbar-default .navbar-brand {
-    color:white;
+.navbar-default .navbar-brand{
+    color: white;
+}
+.navbar-default .navbar-brand:hover {
+    color: #90e0ef !important;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -40,8 +43,7 @@ body{
 }
 
 .post-preview {
-    line-height: 1rem;
-    padding-top: 2.5%;
+    padding: 1.5% 0 1.5% 0;
 }
 
 .title-time {
@@ -52,7 +54,6 @@ body{
 .post-body-preview{
     line-height: 1.25rem;
     text-align: center;
-    padding-bottom: 1.5%;
 }
 
 /* footer */
