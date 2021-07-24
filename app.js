@@ -16,11 +16,13 @@ const date = require('date-and-time');
 
 var pool = mysql.createPool({
   connectionLimit: 10,
-  host: process.env.HOST,
+  host:process.env.HOST,
   user: "b5d10ea4b7c234",
   password: "d56d690a",
   database: "heroku_e0af44fdfb12f8a"
 });
+
+console.log(process.env.HOST);
 
 
 //#region setup content 
