@@ -6,21 +6,16 @@ const ejs = require("ejs");
 const mysql = require("mysql");
 const date = require('date-and-time');
 
-// var pool = mysql.createPool({
-//   connectionLimit: 10,
-//   host: process.env.HOST,
-//   user: process.env.USER,
-//   password: process.env.PASSWORD,
-//   database: process.env.DATABASE
-// });
-
 var pool = mysql.createPool({
   connectionLimit: 10,
-  host: "us-cdbr-east-04.cleardb.com",
-  user: "b5d10ea4b7c234",
-  password: "d56d690a",
-  database: "heroku_e0af44fdfb12f8a"
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE
 });
+
+
+console.log(process.env.HOST);
 
 
 
