@@ -6,13 +6,13 @@ const ejs = require("ejs");
 const mysql = require("mysql");
 const date = require('date-and-time');
 
-var pool = mysql.createPool({
-  connectionLimit: 10,
-  host: process.env.HOST,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE
-});
+// var pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: process.env.HOST,
+//   user: process.env.USER,
+//   password: process.env.PASSWORD,
+//   database: process.env.DATABASE
+// });
 
 var pool = mysql.createPool({
   connectionLimit: 10,
