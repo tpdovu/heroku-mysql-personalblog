@@ -14,6 +14,14 @@ var pool = mysql.createPool({
   database: process.env.DATABASE
 });
 
+var pool = mysql.createPool({
+  connectionLimit: 10,
+  host: "us-cdbr-east-04.cleardb.com",
+  user: "b5d10ea4b7c234",
+  password: "d56d690a",
+  database: "heroku_e0af44fdfb12f8a"
+});
+
 
 //#region setup content 
 const homeStartingContent = "This is a page for posting personal blog posts. Click on 'personal blog' to go to /compose and write post. Most recent posts are listed at the top.";
